@@ -1,0 +1,8 @@
+const http =require('http');
+
+const server = http.createServer(function(req, res){
+
+    //쿠키의 유효기간 변수
+    let date = new Date()
+    date.setDate(date.getDate()+7)
+})

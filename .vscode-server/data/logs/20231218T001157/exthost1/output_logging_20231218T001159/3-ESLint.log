@@ -1,0 +1,42 @@
+[Info  - 12:35:35 AM] ESLint server is starting.
+[Info  - 12:35:35 AM] ESLint server running in node v18.15.0
+[Info  - 12:35:35 AM] ESLint server is running.
+[Info  - 12:36:35 AM] ESLint library loaded from: /home/by1094/node_modules/eslint/lib/api.js
+Uncaught exception received.
+Error: No ESLint configuration found in /home/by1094/testRepo.
+    at CascadingConfigArrayFactory._finalizeConfigArray (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:4000:19)
+    at CascadingConfigArrayFactory.getConfigArrayForFile (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3791:21)
+    at CLIEngine.getConfigForFile (/home/by1094/node_modules/eslint/lib/cli-engine/cli-engine.js:980:14)
+    at ESLint.calculateConfigForFile (/home/by1094/node_modules/eslint/lib/eslint/eslint.js:667:26)
+    at /home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22644
+    at Object.E [as withClass] (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:19218)
+    at w.then.g.validate (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22610)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Uncaught exception received.
+Error: No ESLint configuration found in /home/by1094/testRepo.
+    at CascadingConfigArrayFactory._finalizeConfigArray (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:4000:19)
+    at CascadingConfigArrayFactory.getConfigArrayForFile (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3791:21)
+    at CLIEngine.getConfigForFile (/home/by1094/node_modules/eslint/lib/cli-engine/cli-engine.js:980:14)
+    at ESLint.calculateConfigForFile (/home/by1094/node_modules/eslint/lib/eslint/eslint.js:667:26)
+    at /home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22644
+    at Object.E [as withClass] (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:19218)
+    at w.then.g.validate (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22610)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Uncaught exception received.
+Error: No ESLint configuration found in /home/by1094/testRepo.
+    at CascadingConfigArrayFactory._finalizeConfigArray (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:4000:19)
+    at CascadingConfigArrayFactory.getConfigArrayForFile (/home/by1094/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3791:21)
+    at CLIEngine.getConfigForFile (/home/by1094/node_modules/eslint/lib/cli-engine/cli-engine.js:980:14)
+    at ESLint.calculateConfigForFile (/home/by1094/node_modules/eslint/lib/eslint/eslint.js:667:26)
+    at /home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22644
+    at Object.E [as withClass] (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:19218)
+    at w.then.g.validate (/home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2/server/out/eslintServer.js:1:22610)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[Warn  - 12:42:58 AM] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/by1094/testRepo/node_modules/.bin/semver
+File will not be validated. Consider running 'eslint --init' in the workspace folder testRepo
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 12:43:19 AM] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/by1094/testRepo/src/app.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder testRepo
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.

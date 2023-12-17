@@ -1,0 +1,17 @@
+2023-12-17 22:03:02.685 [info] Log level: Info
+2023-12-17 22:03:02.685 [info] Validating found git in: "git"
+2023-12-17 22:03:02.685 [info] Using git "2.25.1" from "git"
+2023-12-17 22:03:02.685 [info] > git rev-parse --show-toplevel [11ms]
+2023-12-17 22:03:02.686 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-12-17 22:03:02.698 [info] Open repository: /home/by1094/testRepo
+2023-12-17 22:03:02.708 [info] > git config --get commit.template [5ms]
+2023-12-17 22:03:02.710 [info] > git rev-parse --show-toplevel [2ms]
+2023-12-17 22:03:02.719 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/feature/front-html refs/remotes/feature/front-html [5ms]
+2023-12-17 22:03:02.725 [info] > git rev-parse --show-toplevel [7ms]
+2023-12-17 22:03:02.731 [info] > git status -z -uall [7ms]
+2023-12-17 22:03:02.755 [info] > git config --get commit.template [5ms]
+2023-12-17 22:03:02.757 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/feature/front-html refs/remotes/feature/front-html [3ms]
+2023-12-17 22:03:02.764 [info] > git status -z -uall [2ms]
+2023-12-17 22:03:03.085 [info] > git show --textconv :src/public/main.ejs [11ms]
+2023-12-17 22:03:03.085 [info] > git ls-files --stage -- /home/by1094/testRepo/src/public/main.ejs [6ms]
+2023-12-17 22:03:03.320 [info] > git check-ignore -v -z --stdin [3ms]

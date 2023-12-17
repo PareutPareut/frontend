@@ -1,0 +1,1 @@
+docker container -> application 런타임에 필요한 

@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.defaultInterpreterPath": "C:\\Users\\82108\\AppData\\Local\\Microsoft\\WindowsApps\\python3.11.exe",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "onFocusChange"
+}

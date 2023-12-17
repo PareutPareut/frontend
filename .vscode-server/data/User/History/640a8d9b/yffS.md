@@ -1,0 +1,8 @@
+form : 사용자가 입력한 정보를 서버로 전송할 때 사용하는 것들  
+어디로 전송되냐를 이 form 태그가 결정함!  
+
+
+제출 버튼은 submit! -> 눌렀을 때 어디로 가느냐를 form의 action속성에 넣어줌!(action="")
+
+name="hide" value="egoing"
+

@@ -1,0 +1,16 @@
+2023-12-18 00:11:57.668 [info] 
+
+
+
+
+2023-12-18 00:11:57.686 [info] Extension host agent started.
+2023-12-18 00:11:58.077 [info] [127.0.0.1][c10cb2e4][ManagementConnection] New connection established.
+2023-12-18 00:11:58.994 [info] [127.0.0.1][438189dc][ExtensionHostConnection] New connection established.
+2023-12-18 00:11:59.002 [info] [127.0.0.1][438189dc][ExtensionHostConnection] <1000> Launched Extension Host Process.
+2023-12-18 00:35:33.555 [info] Getting Manifest... dbaeumer.vscode-eslint
+2023-12-18 00:35:33.969 [info] Installing extension: dbaeumer.vscode-eslint
+2023-12-18 00:35:35.020 [warning] Extension signature verification failed with error 'ENOENT': dbaeumer.vscode-eslint
+2023-12-18 00:35:35.109 [info] Extracted extension to file:///home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2: dbaeumer.vscode-eslint
+2023-12-18 00:35:35.125 [info] Renamed to /home/by1094/.vscode-server/extensions/dbaeumer.vscode-eslint-2.4.2
+2023-12-18 00:35:35.133 [info] Extracting extension completed. dbaeumer.vscode-eslint
+2023-12-18 00:35:35.148 [info] Extension installed successfully: dbaeumer.vscode-eslint

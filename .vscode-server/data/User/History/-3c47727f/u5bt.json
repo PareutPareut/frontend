@@ -1,0 +1,6 @@
+{
+    "window.autoDetectColorScheme": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.defaultColorDecorators": false,
+    "editor.tokenColorCustomizations": {}
+}

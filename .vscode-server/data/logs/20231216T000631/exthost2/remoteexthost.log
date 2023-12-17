@@ -1,0 +1,23 @@
+2023-12-16 00:12:29.523 [info] Extension host with pid 2191 started
+2023-12-16 00:12:29.523 [error] Error: EEXIST: file already exists, open '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock'
+2023-12-16 00:12:29.533 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock': Could not acquire lock, checking if the file is stale.
+2023-12-16 00:12:29.537 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock': The pid 981 appears to be gone.
+2023-12-16 00:12:29.537 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock': Deleting a stale lock.
+2023-12-16 00:12:29.558 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2023-12-16 00:12:29.559 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2023-12-16 00:12:29.559 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-12-16 00:12:29.696 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock': Lock acquired.
+2023-12-16 00:12:30.102 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-12-16 00:12:30.132 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-12-16 00:12:30.132 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-12-16 00:12:30.341 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2023-12-16 00:12:30.449 [info] Eager extensions activated
+2023-12-16 00:12:30.449 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-12-16 00:12:30.450 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-12-16 00:12:30.450 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-12-16 00:12:30.450 [info] ExtensionService#_doActivateExtension tonybaloney.vscode-pets, startup: false, activationEvent: 'onStartupFinished'
+2023-12-16 00:12:30.713 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2023-12-16 00:12:30.713 [info] ExtensionService#_doActivateExtension tht13.html-preview-vscode, startup: false, activationEvent: 'onLanguage:html'
+2023-12-16 00:13:15.853 [info] Extension host terminating: received terminate message from renderer
+2023-12-16 00:13:15.854 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/3b2751f9d25aca4ee4efb16ab2bb7e64/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-12-16 00:13:15.914 [info] Extension host with pid 2191 exiting with code 0

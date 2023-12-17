@@ -1,0 +1,18 @@
+2023-12-15 20:58:34.681 [info] Extension host with pid 945 started
+2023-12-15 20:58:34.681 [error] Error: EEXIST: file already exists, open '/home/by1094/.vscode-server/data/User/workspaceStorage/601063d86ab00c0ad208c76d38f19f47/vscode.lock'
+2023-12-15 20:58:34.693 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/601063d86ab00c0ad208c76d38f19f47/vscode.lock': Could not acquire lock, checking if the file is stale.
+2023-12-15 20:58:34.700 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/601063d86ab00c0ad208c76d38f19f47/vscode.lock': The pid 1382 appears to be gone.
+2023-12-15 20:58:34.700 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/601063d86ab00c0ad208c76d38f19f47/vscode.lock': Deleting a stale lock.
+2023-12-15 20:58:34.722 [info] Lock '/home/by1094/.vscode-server/data/User/workspaceStorage/601063d86ab00c0ad208c76d38f19f47/vscode.lock': Lock acquired.
+2023-12-15 20:58:34.760 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2023-12-15 20:58:34.762 [info] ExtensionService#_doActivateExtension tht13.html-preview-vscode, startup: false, activationEvent: 'onLanguage:html'
+2023-12-15 20:58:34.764 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-12-15 20:58:35.766 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-12-15 20:58:35.772 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2023-12-15 20:58:35.813 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-12-15 20:58:35.814 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-12-15 20:58:36.304 [info] Eager extensions activated
+2023-12-15 20:58:36.305 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-12-15 20:58:36.305 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-12-15 20:58:36.305 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-12-15 20:58:36.306 [info] ExtensionService#_doActivateExtension tonybaloney.vscode-pets, startup: false, activationEvent: 'onStartupFinished'

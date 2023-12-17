@@ -1,0 +1,9 @@
+h1{
+    color : red;
+    font-size : 2.0em;
+    
+}
+
+body{
+    background: linear-gradient(#777777, #333333 ) fixed;
+}

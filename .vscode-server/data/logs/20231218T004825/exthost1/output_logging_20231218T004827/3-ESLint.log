@@ -1,0 +1,12 @@
+[Info  - 1:07:17 AM] ESLint server is starting.
+[Info  - 1:07:17 AM] ESLint server running in node v18.15.0
+[Info  - 1:07:17 AM] ESLint server is running.
+[Info  - 1:07:18 AM] ESLint library loaded from: /home/by1094/node_modules/eslint/lib/api.js
+[Warn  - 1:07:18 AM] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/by1094/testRepo/node_modules/.bin/ejs
+File will not be validated. Consider running 'eslint --init' in the workspace folder testRepo
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 1:16:26 AM] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/by1094/testRepo/src/routers/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder testRepo
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.

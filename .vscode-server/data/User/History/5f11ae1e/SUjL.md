@@ -1,0 +1,1 @@
+docker container -> application 런타임에 필요한 모든 것을 담을 수 있는 것!  

@@ -1,0 +1,12 @@
+2023-12-17 22:01:15.678 [info] Extension host with pid 832 started
+2023-12-17 22:01:15.709 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-12-17 22:01:15.744 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-12-17 22:01:15.745 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-12-17 22:01:15.898 [info] Eager extensions activated
+2023-12-17 22:01:15.898 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-12-17 22:01:15.899 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-12-17 22:01:15.899 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-12-17 22:01:15.899 [info] ExtensionService#_doActivateExtension tonybaloney.vscode-pets, startup: false, activationEvent: 'onStartupFinished'
+2023-12-17 22:02:27.601 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2023-12-17 22:02:56.983 [info] Extension host terminating: received terminate message from renderer
+2023-12-17 22:02:57.011 [info] Extension host with pid 832 exiting with code 0

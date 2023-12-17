@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>html- form, document, onclick event</title>
+    </head>
+    <body>
+        <header>
+            <h1>오늘의 html 공부 목차</h1>
+        </header>
+        <ol>
+            <li>form데이터란 무엇인가</li>
+            <li>document?</li>
+            <li>onclick event?</li>
+        </ol>
+
+        <form action="localhost:3000/user" method="post">
+            <div>
+                <p>기본 form의 method는 get(url)을 통해 데이터 전송-> 보안 위험</p>
+                <p>100이면 100 <strong>method="post"</strong>로 설정!</p>
+            </div>
+                
+            <div>
+                <label for="put_id"> 아이디 입력 : </label>
+                <input type="text" id="put_id" name="id">
+            </div>
+
+            <div>
+                <label for="put_pwd">비밀번호 입력 : </label>
+                <input type="password" id="put_pwd" name="pwd">
+            </div>
+
+            <br>
+
+            <label>
+                <span><input type="checkbox" name="여름" value="summer">SUMMER </span>
+            </label>
+
+            <div>
+                <h3>label 태그 사용법</h3>
+                <li>
+                    <ul><strong>명시적 작성 방식</strong></ul>
+                    <p>label태그와 input태그를를 따로 사용, </p>
+                </li>
+            </div>
+
+            <input type="submit">
+        </form>
+
+
+        <script>
+
+        </script>
+
+        <footer>
+            <a href="https://opentutorials.org/course/2039/10962" target="_blank">출처(생활코딩)를 새 탭에서 엽니다.</a>
+        </footer>
+
+
+    </body>
+</html>
