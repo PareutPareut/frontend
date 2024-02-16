@@ -1,5 +1,4 @@
 import { rest } from "msw"
-import memberAll from "./__fixtures__/memberAll.json"
 
 export const handlers = [
   rest.post("/login/:1", (req, res, ctx) => {
@@ -15,23 +14,6 @@ export const handlers = [
       )
     } else {
       return res(ctx.status(400), ctx.json({ message: "회원가입 실패" }))
-    }
-  }),
-
-  rest.post("/event", (req, res, ctx) => {
-    const { date, event_name } = req.body
-    if (date.length !== 0 && event_name) {
-      return res(
-        ctx.status(200),
-        ctx.json({
-          message: "이벤트 보내기 완료",
-          date: date,
-          event_name: event_name,
-          eventId: 1,
-        })
-      )
-    } else {
-      return res(ctx.status(400), ctx.json({ message: "이벤트 요청 실패" }))
     }
   }),
 ]
