@@ -28,8 +28,8 @@ const MainPage = () => {
     // 이벤트 생성 요청 보내기
     createEvent(eventData, {
       onSuccess(data) {
-        console.log("성공입니다", data.eventId)
-        navigate(`/login/:${data.eventId}`)
+        console.log("성공입니다", data.data.eventId)
+        navigate(`/login/${data.data.eventId}`)
       },
       onError() {
         console.log("error")

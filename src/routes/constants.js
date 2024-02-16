@@ -1,5 +1,5 @@
 export const PATH = {
   MAIN: "/",
-  SIGNUP: "/signup",
+  SIGNUP: "/login/:id",
   EVENTPAGE: "/event",
 }
