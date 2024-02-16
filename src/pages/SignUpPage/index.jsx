@@ -27,7 +27,7 @@ const SignUpPage = () => {
     signUp(signUpFormData, {
       onSuccess() {
         console.log("success")
-        navigate("/event")
+        navigate(`/event/${id}`)
       },
       onError() {
         console.log("error")
