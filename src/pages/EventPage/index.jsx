@@ -36,6 +36,10 @@ const mock = {
       userName: "연우",
       timeList: [
         {
+          date: "2021-08-01",
+          time: [2, 3, 12, 40],
+        },
+        {
           date: "2021-08-02",
           time: [2, 3, 4, 13, 1],
         },

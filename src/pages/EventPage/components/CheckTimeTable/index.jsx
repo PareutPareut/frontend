@@ -1,5 +1,30 @@
 import { useState } from "react"
 
+const hexToRgb = hex => {
+  return [
+    parseInt(hex.slice(1, 3), 16),
+    parseInt(hex.slice(3, 5), 16),
+    parseInt(hex.slice(5, 7), 16),
+  ]
+}
+
+const interpolateColor = (colorStart, colorEnd, steps, step) => {
+  var stepFactor = step / steps,
+    color = []
+  for (var i = 0; i < 3; i++) {
+    color[i] = Math.round(colorStart[i] + stepFactor * (colorEnd[i] - colorStart[i]))
+  }
+  return "bg-[rgb(" + color.join(",") + ")]"
+}
+
+const generateColors = (colorStart, colorEnd, steps) => {
+  var colors = []
+  for (var i = 0; i < steps; i++) {
+    colors.push(interpolateColor(colorStart, colorEnd, steps, i))
+  }
+  return colors
+}
+
 const CheckTimeTable = ({ data }) => {
   const userList = ["All", ...data.userList.map(user => user.userName)]
   const totalTime = {}
@@ -10,7 +35,7 @@ const CheckTimeTable = ({ data }) => {
         .flat()
     )
     .flat()
-  console.log(totalTimeArray)
+
   const [selectedUser, setSelectedUser] = useState("All")
   const [selectedTimes, setSelectedTimes] = useState(
     Array.from(new Set(totalTimeArray)).sort((a, b) => a - b)
@@ -19,7 +44,8 @@ const CheckTimeTable = ({ data }) => {
   totalTimeArray.forEach(time => {
     totalTime[time] ? totalTime[time]++ : (totalTime[time] = 1)
   })
-  console.log(totalTime)
+
+  const colors = generateColors(hexToRgb("#CFFFCF"), hexToRgb("#165B16"), userList.length - 1)
 
   const handleClickUser = user => {
     setSelectedUser(user)
@@ -34,6 +60,7 @@ const CheckTimeTable = ({ data }) => {
       )
     }
   }
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-start gap-5 pb-32 overflow-y-scroll">
       <div className="flex justify-center items-center w-full gap-4">
@@ -72,7 +99,7 @@ const CheckTimeTable = ({ data }) => {
                     </>
                   )}
                   <div
-                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
+                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? (selectedUser === "All" ? colors[totalTime[index + dateIdx * 48 + 1] - 1] : "bg-[#A9FF75]") : "bg-gray-200"}`}
                   />
                 </div>
               ))}
