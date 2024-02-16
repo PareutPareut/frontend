@@ -1,8 +1,7 @@
 import { rest } from "msw"
-//import memberAll from "./__fixtures__/memberAll.json"
 
 export const handlers = [
-  rest.post("/signup", (req, res, ctx) => {
+  rest.post("/login/:1", (req, res, ctx) => {
     const { userName, password } = req.body
     if (userName && password) {
       return res(
@@ -17,9 +16,6 @@ export const handlers = [
       return res(ctx.status(400), ctx.json({ message: "회원가입 실패" }))
     }
   }),
-  // rest.get("/user1", (req, res, ctx) => {
-  //   return res(ctx.json(memberAll))
-  // }),
 ]
 
 export default handlers

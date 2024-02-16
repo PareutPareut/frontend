@@ -1,13 +1,15 @@
 import { Header } from "../../components"
 import { usePostSignUp } from "@/apis/hooks"
 import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import { useState } from "react"
 
 const SignUpPage = () => {
   const navigate = useNavigate()
-
-  const { mutate: signUp } = usePostSignUp()
+  const { id } = useParams()
+  console.log("id확인", id)
+  const { mutate: signUp } = usePostSignUp(id)
 
   const [signUpFormData, setSignUpFormData] = useState({
     userName: "",

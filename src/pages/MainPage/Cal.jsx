@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { subMonths } from 'date-fns';
 import useCalendar from './useCalendar';
 
-const Cal = () => {
+const Cal = ({selectedDates, onDateClick}) => {
   const { weekCalendarList, currentDate, setCurrentDate } = useCalendar();
-  const [selectedDates, setSelectedDates] = useState([]); //달력 값 용
-  const [sendDates, setSendDates] = useState([]); //db전달 용
 
   const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 
@@ -19,19 +17,10 @@ const Cal = () => {
     setCurrentDate(previousMonthDate); // 현재 날짜 변경
   };
 
-  const handleDateClick = (day) => {
-    // 현재 년도, 월, 일
-    const year = currentDate.getFullYear();
-    const month = `${currentDate.getMonth() + 1}`.padStart(2, '0'); // 월을 2글자로 표시
-    const formattedDay = `${day}`.padStart(2, '0'); // 일을 2글자로 표시
-
-    const formattedDate = `${year}-${month}-${formattedDay}`;
-    if (selectedDates.includes(formattedDate)) {
-        setSelectedDates(selectedDates.filter((date) => date !== formattedDate));
-    } else {
-        setSelectedDates([...selectedDates, formattedDate]);
-    }
-  };
+  
+  useEffect(()=>{
+    console.log(selectedDates)
+  })
 
   return (
     <div className='calendarMain flex flex-col items-center'>
@@ -63,7 +52,7 @@ const Cal = () => {
                 <td key={dayIndex}>
                   {day !== 0 && (
                     <button
-                      onClick={() => handleDateClick(day)}
+                      onClick={() => onDateClick(day)}
                       className={`w-10 p-3 w-full text-center rounded 
                       ${selectedDates.includes(`${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`) ? 
                       'bg-green-700 text-white' : 'bg-green-200 text-black'}`}
