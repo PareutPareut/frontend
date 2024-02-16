@@ -29,7 +29,7 @@ const SignUpPage = () => {
             <div className="flex flex-row justify-between">
               이름
               <input
-                className="bg-slate-100 rounded-md"
+                className="bg-slate-100 rounded-md h-8"
                 type="text"
                 name="name"
                 value={signUpFormData.name}
@@ -39,7 +39,7 @@ const SignUpPage = () => {
             <div className="flex flex-row justify-between">
               비밀번호
               <input
-                className="bg-slate-100 rounded-md"
+                className="bg-slate-100 rounded-md h-8"
                 type="password"
                 name="password"
                 value={signUpFormData.password}
@@ -49,7 +49,7 @@ const SignUpPage = () => {
           </div>
 
           <div className="flex justify-center bg-lime-400 rounded-md w-[30%]">
-            <button type="submit" className="text-white">
+            <button type="submit" className="text-white h-8">
               로그인
             </button>
           </div>
