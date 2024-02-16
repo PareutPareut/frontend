@@ -1,8 +1,14 @@
 import { Header } from "../../components"
+import { usePostSignUp } from "@/apis/hooks"
+import { useNavigate } from "react-router-dom"
 
 import { useState } from "react"
 
 const SignUpPage = () => {
+  const navigate = useNavigate()
+
+  const { mutate: signUp } = usePostSignUp()
+
   const [signUpFormData, setSignUpFormData] = useState({
     name: "",
     password: "",
@@ -16,6 +22,15 @@ const SignUpPage = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    signUp(signUpFormData, {
+      onSuccess() {
+        console.log("success")
+        navigate("/event")
+      },
+      onError() {
+        console.log("error")
+      },
+    })
   }
   return (
     <div className="flex flex-col h-screen w-full">
