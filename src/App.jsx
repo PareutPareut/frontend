@@ -1,7 +1,7 @@
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { RecoilRoot } from "recoil";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
+import { RecoilRoot } from "recoil"
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <div>임시</div>
       </QueryClientProvider>
     </RecoilRoot>
-  );
+  )
 }
 
-export default App;
+export default App
