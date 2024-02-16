@@ -1,0 +1,40 @@
+{
+  "hash": "a42bd83a",
+  "configHash": "d87cc151",
+  "lockfileHash": "3168825e",
+  "browserHash": "cbd874f8",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "e9fd1af4",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f41c394a",
+      "needsInterop": true
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "f05926f1",
+      "needsInterop": false
+    },
+    "recoil": {
+      "src": "../../node_modules/recoil/es/index.js",
+      "file": "recoil.js",
+      "fileHash": "cd55f502",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-S7MSN5PM": {
+      "file": "chunk-S7MSN5PM.js"
+    },
+    "chunk-AVIRXYGP": {
+      "file": "chunk-AVIRXYGP.js"
+    }
+  }
+}
