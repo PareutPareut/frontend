@@ -33,11 +33,6 @@ const Cal = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(currentDate);
-    console.log(selectedDates)
-  }, [currentDate, selectedDates]);
-
   return (
     <div className='calendarMain flex flex-col items-center'>
       <div className='flex'>
@@ -69,7 +64,7 @@ const Cal = () => {
                   {day !== 0 && (
                     <button
                       onClick={() => handleDateClick(day)}
-                      className={`w-10 p-2 w-full text-center rounded 
+                      className={`w-10 p-3 w-full text-center rounded 
                       ${selectedDates.includes(`${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`) ? 
                       'bg-green-700 text-white' : 'bg-green-200 text-black'}`}
                     >
