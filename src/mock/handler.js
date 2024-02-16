@@ -17,7 +17,7 @@ export const handlers = [
       return res(ctx.status(400), ctx.json({ message: "회원가입 실패" }))
     }
   }),
-  rest.get("/user1", (req, res, ctx) => {
+  rest.get("/test", (req, res, ctx) => {
     return res(ctx.json(memberAll))
   }),
 ]
