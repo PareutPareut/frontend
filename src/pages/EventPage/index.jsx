@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useState } from "react"
+import { Header } from "@/components"
 
 const mock = {
   dateList: ["2021-08-01", "2021-08-02", "2021-08-03"],
@@ -52,7 +53,7 @@ const EventPage = () => {
       if (!acc[groupIndex]) {
         acc[groupIndex] = []
       }
-      acc[groupIndex].push(cur % 48)
+      acc[groupIndex].push(cur % 48 === 0 ? 48 : cur % 48)
       return acc
     }, [])
   }
@@ -77,7 +78,7 @@ const EventPage = () => {
 
   return (
     <div className="w-full h-full ">
-      <h1 className="bg-red-200">Event Page</h1>
+      <Header />
       <Tabs defaultValue="account" className="w-full h-full">
         <TabsList className="w-full">
           <TabsTrigger className="w-full" value="register">
@@ -88,8 +89,8 @@ const EventPage = () => {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="register" className="flex h-full w-full">
-          <div className="w-full h-full flex justify-center items-start gap-3 pt-5 pb-20 overflow-y-scroll">
-            <div className="w-full  flex flex-row gap-5 justify-center">
+          <div className="w-full h-full flex justify-center items-start gap-3 pt-5 pb-32 overflow-y-scroll">
+            <div className="w-full flex flex-row gap-5 justify-center overflow-y-scroll">
               {mock.dateList.map((date, dateIdx) => {
                 return (
                   <div
@@ -115,7 +116,7 @@ const EventPage = () => {
                           </>
                         )}
                         <div
-                          className={`h-[4vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
+                          className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
                           onMouseDown={() => handleMouseDown(index + dateIdx * 48 + 1)}
                           onMouseEnter={() => handleMouseEnter(index + dateIdx * 48 + 1)}
                         ></div>
@@ -128,7 +129,7 @@ const EventPage = () => {
 
             <button
               onClick={handleRegister}
-              className="absolute bottom-4 right-4 px-10 py-2 rounded-lg bg-[#3FC93F] cursor-pointer hover:bg-[#388608] text-2xl text-white"
+              className="absolute bottom-4 right-4 desktop:px-10 desktop:py-2 px-4 py-1 rounded-lg bg-[#3FC93F] cursor-pointer hover:bg-[#388608] desktop:text-xl test-sm text-white"
             >
               등록
             </button>
