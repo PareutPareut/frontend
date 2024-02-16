@@ -1,18 +1,38 @@
 import { useState } from "react"
 
 const CheckTimeTable = ({ data }) => {
-  const [selectedUser, setSelectedUser] = useState("")
-  const [selectedTimes, setSelectedTimes] = useState([])
-  const userList = data.userList.map(user => user.userName)
+  const userList = ["All", ...data.userList.map(user => user.userName)]
+  const totalTime = {}
+  const totalTimeArray = data.userList
+    .map(user =>
+      user.timeList
+        .map(({ date, time }) => time.map(t => t + data.dateList.indexOf(date) * 48))
+        .flat()
+    )
+    .flat()
+  console.log(totalTimeArray)
+  const [selectedUser, setSelectedUser] = useState("All")
+  const [selectedTimes, setSelectedTimes] = useState(
+    Array.from(new Set(totalTimeArray)).sort((a, b) => a - b)
+  )
+
+  totalTimeArray.forEach(time => {
+    totalTime[time] ? totalTime[time]++ : (totalTime[time] = 1)
+  })
+  console.log(totalTime)
 
   const handleClickUser = user => {
     setSelectedUser(user)
-    setSelectedTimes(
-      data.userList
-        .find(userData => userData.userName === user)
-        .timeList.map(({ date, time }) => time.map(t => t + data.dateList.indexOf(date) * 48))
-        .flat()
-    )
+    if (user === "All") {
+      setSelectedTimes(Array.from(new Set(totalTimeArray)).sort((a, b) => a - b))
+    } else {
+      setSelectedTimes(
+        data.userList
+          .find(userData => userData.userName === user)
+          .timeList.map(({ date, time }) => time.map(t => t + data.dateList.indexOf(date) * 48))
+          .flat()
+      )
+    }
   }
   return (
     <div className="w-full h-full flex flex-col justify-center items-start gap-5 pb-32 overflow-y-scroll">
