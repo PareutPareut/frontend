@@ -1,4 +1,4 @@
-export const divideArrayIntoChunks = arr => {
+const divideArrayIntoChunks = arr => {
   return arr.reduce((acc, cur) => {
     const groupIndex = Math.floor((cur - 1) / 48)
     if (!acc[groupIndex]) {
@@ -8,3 +8,5 @@ export const divideArrayIntoChunks = arr => {
     return acc
   }, [])
 }
+
+export default divideArrayIntoChunks
