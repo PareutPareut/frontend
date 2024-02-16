@@ -17,6 +17,7 @@ const CheckTimeTable = ({ data }) => {
   const [selectedTimes, setSelectedTimes] = useState(
     Array.from(new Set(totalTimeArray)).sort((a, b) => a - b)
   )
+  const [choseUsers, setChoseUsers] = useState([])
 
   totalTimeArray.forEach(time => {
     totalTime[time] ? totalTime[time]++ : (totalTime[time] = 1)
@@ -36,6 +37,24 @@ const CheckTimeTable = ({ data }) => {
     }
   }
 
+  const handleClickTime = time => {
+    const dateIdx = Math.floor(time / 48)
+    const timeIdx = time % 48 === 0 ? 48 : time % 48
+
+    setChoseUsers([])
+
+    data.userList.forEach(userData => {
+      let flag = false
+
+      userData.timeList.map(({ date, time }) => {
+        if (date === data.dateList[dateIdx] && time.includes(timeIdx)) {
+          flag = true
+        }
+      })
+      flag && setChoseUsers(prev => [...prev, userData.userName])
+    })
+  }
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-start gap-5 pb-32 overflow-y-scroll">
       <div className="flex justify-center items-center w-full gap-4">
@@ -45,6 +64,14 @@ const CheckTimeTable = ({ data }) => {
             className={`px-2 py-0.5 rounded-full text-sm ${selectedUser === user ? "bg-[#A9FF75]" : "bg-gray-200"}`}
             onClick={() => handleClickUser(user)}
           >
+            {user}
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 w-full">
+        <div className="text-xs">선택한 사람: </div>
+        {choseUsers.map((user, idx) => (
+          <div key={idx} className="text-xs">
             {user}
           </div>
         ))}
@@ -74,6 +101,7 @@ const CheckTimeTable = ({ data }) => {
                     </>
                   )}
                   <div
+                    onClick={() => handleClickTime(index + dateIdx * 48 + 1)}
                     className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? (selectedUser === "All" ? colors[totalTime[index + dateIdx * 48 + 1] - 1] : "bg-[#A9FF75]") : "bg-gray-200"}`}
                   />
                 </div>
