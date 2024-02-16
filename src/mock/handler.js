@@ -1,14 +1,15 @@
 import { rest } from "msw"
+import memberAll from "./__fixtures__/memberAll.json"
 
 export const handlers = [
   rest.post("/signup", (req, res, ctx) => {
-    const { name, password } = req.body
-    if (name && password) {
+    const { userName, password } = req.body
+    if (userName && password) {
       return res(
         ctx.status(200),
         ctx.json({
           message: "회원가입 성공",
-          name: name,
+          name: userName,
           password: password,
         })
       )
@@ -16,6 +17,7 @@ export const handlers = [
       return res(ctx.status(400), ctx.json({ message: "회원가입 실패" }))
     }
   }),
+
   rest.post("/create", (req, res, ctx)=>{
     const {date,event_name} = req.body
     if(date && event_name) {
@@ -29,6 +31,7 @@ export const handlers = [
       )
     }
   })
+
 ]
 
 export default handlers
