@@ -1,34 +1,21 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
-    es2020: true,
+    es2021: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended",
-  ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
-  // settings: { react: { version: "18.2" } },
-  settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        moduleDirectory: ["node_modules", "@types"],
-      },
-      typescript: {},
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
+    ecmaVersion: 12,
+    sourceType: "module",
   },
-  plugins: ["react-refresh"],
+  plugins: ["react"],
   rules: {
-    "react/jsx-no-target-blank": "off",
-    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
   },
 }
 
@@ -36,19 +23,28 @@ module.exports = {
 //   root: true,
 //   env: {
 //     browser: true,
-//     es2020: true,
+//     es2021: true,
 //     node: true,
 //   },
 //   extends: [
 //     "eslint:recommended",
 //     "plugin:react/recommended",
-//     "plugin:import/recommended",
-//     // "plugin:jsx-a11y/recommended",
+//     // "plugin:react/jsx-runtime",
 //     "plugin:react-hooks/recommended",
-//     "plugin:prettier/recommended",
+//     "plugin:import/recommended",
 //     "eslint-config-prettier",
+//     "plugin:prettier/recommended",
 //   ],
 //   ignorePatterns: ["dist", ".eslintrc.cjs"],
+//   // parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+//   // compilerOptions: {
+//   //   jsx: "react",
+//   //   baseUrl: "./src",
+//   //   // "paths": {
+//   //   //   "#/*": ["./*"]
+//   //   // }
+//   // },
+//   plugins: ["react"],
 
 //   settings: {
 //     react: {
@@ -57,12 +53,15 @@ module.exports = {
 //     "import/resolver": {
 //       node: {
 //         extensions: [".js", ".jsx", ".ts", ".tsx"],
+//         // moduleDirectory: ["node_modules", "@types"],
 //       },
+//       typescript: {},
 //     },
 //   },
+//   // plugins: ["react-refresh"],
 //   rules: {
-//     "react/react-in-jsx-scope": "off",
+//     // "react/jsx-no-target-blank": "off",
+//     "react/prop-types": "off",
 //     "import/newline-after-import": ["error"],
-//     "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 //   },
 // }
