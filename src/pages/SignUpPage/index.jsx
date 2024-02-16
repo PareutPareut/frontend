@@ -1,22 +1,22 @@
-import { Header } from "../../components";
+import { Header } from "../../components"
 
-import { useState } from "react";
+import { useState } from "react"
 
 const SignUpPage = () => {
   const [signUpFormData, setSignUpFormData] = useState({
     name: "",
     password: "",
-  });
+  })
   const handleChange = e => {
     setSignUpFormData({
       ...signUpFormData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = async e => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
   return (
     <div className="flex flex-col h-screen w-full">
       <Header />
@@ -56,7 +56,7 @@ const SignUpPage = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUpPage;
+export default SignUpPage
