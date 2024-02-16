@@ -17,9 +17,21 @@ export const handlers = [
       return res(ctx.status(400), ctx.json({ message: "회원가입 실패" }))
     }
   }),
-  rest.get("/test", (req, res, ctx) => {
-    return res(ctx.json(memberAll))
-  }),
+
+  rest.post("/create", (req, res, ctx)=>{
+    const {date,event_name} = req.body
+    if(date && event_name) {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          message:"이벤트 보내기 완료",
+          date: date,
+          event_name: event_name,
+        })
+      )
+    }
+  })
+
 ]
 
 export default handlers
