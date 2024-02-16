@@ -1,39 +1,6 @@
 import { useState } from "react"
 
-const mock = {
-  loginName: "주하",
-  dateList: ["2021-08-01", "2021-08-02", "2021-08-03"],
-  userList: [
-    {
-      userName: "주하",
-      timeList: [
-        {
-          date: "2021-08-01",
-          time: [2, 3, 4],
-        },
-        {
-          date: "2021-08-02",
-          time: [2, 5, 6],
-        },
-      ],
-    },
-    {
-      userName: "예지",
-      timeList: [
-        {
-          date: "2021-08-03",
-          time: [2, 3, 4, 13, 48],
-        },
-        {
-          date: "2021-08-02",
-          time: [2, 5, 6],
-        },
-      ],
-    },
-  ],
-}
-
-const Register = () => {
+const Register = ({ data }) => {
   const [isDragging, setIsDragging] = useState(false)
   const [selectedTimes, setSelectedTimes] = useState([])
   const [isSelected, setIsSelected] = useState(false)
@@ -78,7 +45,7 @@ const Register = () => {
 
     result.forEach((time, idx) => {
       selectedTime.push({
-        date: mock.dateList[idx],
+        date: data.dateList[idx],
         time,
       })
     })
@@ -90,7 +57,7 @@ const Register = () => {
   return (
     <div className="w-full h-full flex justify-center items-start gap-3 pt-5 pb-32 overflow-y-scroll">
       <div className="w-full flex flex-row gap-5 justify-center overflow-y-scroll">
-        {mock.dateList.map((date, dateIdx) => {
+        {data.dateList.map((date, dateIdx) => {
           return (
             <div
               className={`flex flex-col gap-0.5 w-[20%] ${dateIdx === 0 && "mr-6 desktop:mr-20"}`}
