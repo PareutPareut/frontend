@@ -1,48 +1,55 @@
 // MainPage.js
-import React, { useState } from 'react';
-import Cal from './Cal'; // Cal 컴포넌트 가져오기
-import useCalendar from './useCalendar';
-import usePostEventCreate from '../../apis/hooks/usePostEventCreate';
-import logo from '../../assets/logo.png';
+import React, { useState } from "react"
+import Cal from "./Cal" // Cal 컴포넌트 가져오기
+import useCalendar from "./useCalendar"
+import usePostEventCreate from "../../apis/hooks/usePostEventCreate"
+import logo from "../../assets/logo.png"
+import { useNavigate } from "react-router-dom"
 
 const MainPage = () => {
-  const [eventName, setEventName] = useState(''); // 잔디명 상태
-  const [selectedDates, setSelectedDates] = useState([]); // 선택된 날짜들 상태
-  const { mutate: createEvent } = usePostEventCreate();
-  const {currentDate} = useCalendar();
-  
+  const navigate = useNavigate()
+  const [eventName, setEventName] = useState("") // 잔디명 상태
+  const [selectedDates, setSelectedDates] = useState([]) // 선택된 날짜들 상태
+  const { mutate: createEvent } = usePostEventCreate()
+  const { currentDate } = useCalendar()
+
   //잔디명 상태 업데이트
-  const handleEventNameChange = (event) => {
-    setEventName(event.target.value);
-  };
+  const handleEventNameChange = event => {
+    setEventName(event.target.value)
+  }
 
   // Create api 연결
-  const handleCreateEvent = () => {
-    try {
-      const eventData = {
-        date: selectedDates,
-        event_name: eventName,
-      };
-      // 이벤트 생성 요청 보내기
-      createEvent(eventData);
-    } catch(error) {
-      console.log("메인페이지 오류 ", error);
+  const handleCreateEvent = e => {
+    e.preventDefault()
+    const eventData = {
+      date: selectedDates,
+      event_name: eventName,
     }
-  };
+    // 이벤트 생성 요청 보내기
+    createEvent(eventData, {
+      onSuccess(data) {
+        console.log("성공입니다", data.data.eventId)
+        navigate(`/login/${data.data.eventId}`)
+      },
+      onError() {
+        console.log("error")
+      },
+    })
+  }
 
-  const handleDateClick = (day) => {
+  const handleDateClick = day => {
     // 현재 년도, 월, 일
-    const year = currentDate.getFullYear();
-    const month = `${currentDate.getMonth() + 1}`.padStart(2, '0'); // 월을 2글자로 표시
-    const formattedDay = `${day}`.padStart(2, '0'); // 일을 2글자로 표시
+    const year = currentDate.getFullYear()
+    const month = `${currentDate.getMonth() + 1}`.padStart(2, "0") // 월을 2글자로 표시
+    const formattedDay = `${day}`.padStart(2, "0") // 일을 2글자로 표시
 
-    const formattedDate = `${year}-${month}-${formattedDay}`;
+    const formattedDate = `${year}-${month}-${formattedDay}`
     if (selectedDates.includes(formattedDate)) {
-        setSelectedDates(selectedDates.filter((date) => date !== formattedDate));
+      setSelectedDates(selectedDates.filter(date => date !== formattedDate))
     } else {
-        setSelectedDates([...selectedDates, formattedDate]);
+      setSelectedDates([...selectedDates, formattedDate])
     }
-  };
+  }
 
   return (
     <div className="MainPage max-w-3xl mx-auto">
@@ -61,16 +68,13 @@ const MainPage = () => {
         {/* Cal 컴포넌트에 selectedDates와 handleDateClick을 props로 전달 */}
         <Cal selectedDates={selectedDates} onDateClick={handleDateClick} />
       </div>
-      <div className='makeLawn flex items-center justify-center mt-5'>
-        <button
-          className='w-72 h-8 rounded-lg bg-green-800 text-white'
-          onClick={handleCreateEvent}
-        >
+      <div className="makeLawn flex items-center justify-center mt-5">
+        <button className="w-72 h-8 rounded-lg bg-green-800 text-white" onClick={handleCreateEvent}>
           잔디 만들기
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainPage;
+export default MainPage
