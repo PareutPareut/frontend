@@ -1,5 +1,4 @@
 import { useMutation } from "@tanstack/react-query"
-import instance from "../../apiClient"
 import axios from "axios"
 
 const usePostSignUp = param => {

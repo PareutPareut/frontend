@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import instance from "@/apis/apiClient"
 
-const useGetMemberAll = () => {
+const useGetMemberAll = ({ param }) => {
   return useQuery({
     queryKey: ["memberAll"],
     queryFn: async () => {
-      const response = await axios.get("/test")
+      const response = await instance.get(`/event/:${param}`)
       return response.data
     },
   })
