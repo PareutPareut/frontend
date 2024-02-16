@@ -10,7 +10,7 @@ const SignUpPage = () => {
   const { mutate: signUp } = usePostSignUp()
 
   const [signUpFormData, setSignUpFormData] = useState({
-    name: "",
+    userName: "",
     password: "",
   })
   const handleChange = e => {
@@ -46,8 +46,8 @@ const SignUpPage = () => {
               <input
                 className="bg-slate-100 rounded-md h-8"
                 type="text"
-                name="name"
-                value={signUpFormData.name}
+                name="userName"
+                value={signUpFormData.userName}
                 onChange={handleChange}
               />
             </div>
