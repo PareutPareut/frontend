@@ -1,4 +1,4 @@
-import apiClient from "../apiClient"
+import apiClient from "../../apiClient"
 import { useMutation } from "@tanstack/react-query"
 
 const usePostTimeTable = ({ param }) => {
