@@ -7,7 +7,7 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="h-dvh flex overflow-hidden relative">
+      <div className="h-dvh flex overflow-hidden relative desktop:max-w-[400px] desktop:mx-auto">
         <RouterProvider router={router} />
       </div>
     </QueryClientProvider>

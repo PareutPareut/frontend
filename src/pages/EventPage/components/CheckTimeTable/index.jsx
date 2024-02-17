@@ -69,21 +69,25 @@ const CheckTimeTable = ({ data }) => {
         ))}
       </div>
       <div className="flex justify-center gap-2 w-full">
-        <div className="text-xs">선택한 사람: </div>
-        {choseUsers.map((user, idx) => (
-          <div key={idx} className="text-xs">
-            {user}
-          </div>
-        ))}
+        {selectedUser === "All" && (
+          <>
+            <div className="text-xs">선택한 사람: </div>
+            {choseUsers.map((user, idx) => (
+              <div key={idx} className="text-xs">
+                {user}
+              </div>
+            ))}
+          </>
+        )}
       </div>
       <div className="w-full flex flex-row gap-5 justify-center overflow-y-scroll">
         {data.dateList.map((date, dateIdx) => {
           return (
             <div
-              className={`flex flex-col gap-0.5 w-[20%] ${dateIdx === 0 && "mr-6 desktop:mr-20"}`}
+              className={`flex flex-col gap-0.5 w-[20%] ${dateIdx === 0 && "mr-6"}`}
               key={dateIdx}
             >
-              <div className="text-xs mb-4 text-center desktop:text-xl">{date}</div>
+              <div className="text-xs mb-4 text-center">{date}</div>
               {Array.from({ length: 48 }).map((_, index) => (
                 <div
                   className={`flex flex-row w-full ${dateIdx === 0 ? "justify-between" : "justify-center"}`}
@@ -93,7 +97,7 @@ const CheckTimeTable = ({ data }) => {
                     <>
                       {index % 2 === 0 ? (
                         <div
-                          className={`text-xs desktop:text-lg`}
+                          className={`text-xs`}
                         >{`${index < 20 ? `0${index / 2}:00` : `${index / 2}:00`}`}</div>
                       ) : (
                         <div></div>

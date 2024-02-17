@@ -56,7 +56,7 @@ const MainPage = () => {
   }
 
   return (
-    <div className="MainPage max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto flex flex-col justify-center">
       <div className="mainImg h-24 flex items-center justify-center">
         <img src={logo} className="w-32" alt="로고" />
       </div>
@@ -69,7 +69,6 @@ const MainPage = () => {
         />
       </div>
       <div className="calenderMain mt-5">
-        {/* Cal 컴포넌트에 selectedDates와 handleDateClick을 props로 전달 */}
         <Cal selectedDates={selectedDates} onDateClick={handleDateClick} />
       </div>
       <div className="makeLawn flex items-center justify-center mt-5">
