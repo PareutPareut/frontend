@@ -1,9 +1,10 @@
 import { useMutation } from "@tanstack/react-query"
-import axios from "axios"
+
+import instance from "../../apiClient"
 
 const usePostSignUp = param => {
   const postSignUp = async formData => {
-    return await axios.post(`/login/:${param}`, formData)
+    return await instance.post(`/login/:${param}`, formData)
   }
 
   return useMutation({ mutationFn: postSignUp })
