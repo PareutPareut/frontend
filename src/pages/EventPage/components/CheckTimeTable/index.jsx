@@ -115,24 +115,39 @@ const CheckTimeTable = ({ data }) => {
                       )}
                     </>
                   )}
-                  <div
+                  {/* <div
                     onClick={() => handleClickTime(index + dateIdx * 48 + 1)}
                     className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? (selectedUser === "All" ? colors[totalTime[index + dateIdx * 48 + 1] - 1] : "bg-[#A9FF75]") : "bg-gray-200"}`}
                     style={{
-                      backgroundColor:
-                        colorsForDirectlyStyle[totalTime[index + dateIdx * 48 + 1] - 1],
+                      backgroundColor: selectedTimes.includes(index + dateIdx * 48 + 1)
+                        ? selectedUser === "All"
+                          ? colors[totalTime[index + dateIdx * 48 + 1] - 1]
+                          : "bg-[#A9FF75]"
+                        : "gray",
                     }}
-                  />
-                  {/* {selectedUser === "All" ? (
+                  /> */}
+                  {selectedUser === "All" ? (
                     <div
                       onClick={() => handleClickTime(index + dateIdx * 48 + 1)}
-                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? colors[totalTime[index + dateIdx * 48 + 1] - 1] : "bg-gray-200"}`}
+                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer`}
+                      style={{
+                        backgroundColor: selectedTimes.includes(index + dateIdx * 48 + 1)
+                          ? colors[totalTime[index + dateIdx * 48 + 1] - 1]
+                          : "#f3f4f6",
+                        borderRadius: "4px",
+                      }}
                     />
                   ) : (
                     <div
-                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
+                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer`}
+                      style={{
+                        backgroundColor: selectedTimes.includes(index + dateIdx * 48 + 1)
+                          ? "#4ade80"
+                          : "#f3f4f6",
+                        borderRadius: "4px",
+                      }}
                     />
-                  )} */}
+                  )}
                 </div>
               ))}
             </div>

@@ -6,13 +6,24 @@ export const hexToRgb = hex => {
   ]
 }
 
-const interpolateColor = (colorStart, colorEnd, steps, step) => {
-  var stepFactor = step / steps,
-    color = []
+// const interpolateColor = (colorStart, colorEnd, steps, step) => {
+//   let stepFactor = step / steps
+//   let color = []
+//   for (var i = 0; i < 3; i++) {
+//     color[i] = Math.round(colorStart[i] + stepFactor * (colorEnd[i] - colorStart[i]))
+//   }
+
+//   return "bg-[rgb(" + color.join(",") + ")]"
+// }
+
+const interpolateColorWithoutTailwind = (colorStart, colorEnd, steps, step) => {
+  let stepFactor = step / steps
+  let color = []
   for (var i = 0; i < 3; i++) {
     color[i] = Math.round(colorStart[i] + stepFactor * (colorEnd[i] - colorStart[i]))
   }
-  return "bg-[rgb(" + color.join(",") + ")]"
+
+  return "rgb(" + color.join(",") + ")"
 }
 
 const interpolateColor2 = (colorStart, colorEnd, steps, step) => {
@@ -35,7 +46,7 @@ export const getColor = (colorStart, colorEnd, steps) => {
 export const generateColors = (colorStart, colorEnd, steps) => {
   var colors = []
   for (var i = 0; i < steps; i++) {
-    colors.push(interpolateColor(colorStart, colorEnd, steps, i))
+    colors.push(interpolateColorWithoutTailwind(colorStart, colorEnd, steps, i))
   }
   return colors
 }
