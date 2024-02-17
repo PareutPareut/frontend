@@ -2,19 +2,20 @@ import { Header } from "../../components"
 import { usePostSignUp } from "@/apis/hooks"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 import { useState } from "react"
 
 const SignUpPage = () => {
+  const { state: eventName } = useLocation()
   const navigate = useNavigate()
   const { id } = useParams()
-  console.log("id확인", id)
   const { mutate: signUp } = usePostSignUp(id)
-
   const [signUpFormData, setSignUpFormData] = useState({
     userName: "",
     password: "",
   })
+
   const handleChange = e => {
     setSignUpFormData({
       ...signUpFormData,
@@ -37,7 +38,8 @@ const SignUpPage = () => {
   return (
     <div className="flex flex-col h-screen w-full">
       <Header />
-      <div className="flex flex-col items-center justify-center h-full w-full">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-10">
+        <div className="text-2xl">{eventName}</div>
         <form
           onSubmit={handleSubmit}
           className="w-full flex flex-col justify-center items-center gap-10"
