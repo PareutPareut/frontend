@@ -7,7 +7,7 @@ const Register = ({ data }) => {
 
   const myName = data.loginName
   const myTimeList = data.userList
-    .find(user => user.userName == myName)
+    ?.find(user => user.userName == myName)
     ?.timeList.map(({ date, time }) => time.map(t => t + data.dateList.indexOf(date) * 48))
     .flat()
 
@@ -54,11 +54,11 @@ const Register = ({ data }) => {
         {data.dateList.map((date, dateIdx) => {
           return (
             <div
-              className={`flex flex-col gap-0.5 w-[20%] ${dateIdx === 0 && "mr-6 desktop:mr-20"}`}
+              className={`flex flex-col gap-0.5 w-[20%] ${dateIdx === 0 && "mr-6"}`}
               onMouseUp={handleMouseUp}
               key={dateIdx}
             >
-              <div className="text-xs mb-4 text-center desktop:text-xl">{date}</div>
+              <div className="text-xs mb-4 text-center">{date}</div>
               {Array.from({ length: 48 }).map((_, index) => (
                 <div
                   className={`flex flex-row w-full ${dateIdx === 0 ? "justify-between" : "justify-center"}`}
@@ -68,7 +68,7 @@ const Register = ({ data }) => {
                     <>
                       {index % 2 === 0 ? (
                         <div
-                          className={`text-xs desktop:text-lg`}
+                          className={`text-xs`}
                         >{`${index < 20 ? `0${index / 2}:00` : `${index / 2}:00`}`}</div>
                       ) : (
                         <div></div>
@@ -76,7 +76,7 @@ const Register = ({ data }) => {
                     </>
                   )}
                   <div
-                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes && selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
+                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes && selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#208920]" : "bg-gray-200"}`}
                     onMouseDown={() => handleMouseDown(index + dateIdx * 48 + 1)}
                     onMouseEnter={() => handleMouseEnter(index + dateIdx * 48 + 1)}
                   ></div>
@@ -89,7 +89,7 @@ const Register = ({ data }) => {
 
       <button
         onClick={handleRegister}
-        className="absolute bottom-4 right-4 desktop:px-10 desktop:py-2 px-4 py-1 rounded-lg bg-[#3FC93F] cursor-pointer hover:bg-[#388608] desktop:text-xl test-sm text-white"
+        className="absolute bottom-4 right-4 px-4 py-1 rounded-lg bg-[#3FC93F] cursor-pointer hover:bg-[#388608] test-sm text-white"
       >
         등록
       </button>
