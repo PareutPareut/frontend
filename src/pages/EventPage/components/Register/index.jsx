@@ -3,9 +3,15 @@ import { divideArrayIntoChunks } from "@/utils"
 
 const Register = ({ data }) => {
   const [isDragging, setIsDragging] = useState(false)
-  const [selectedTimes, setSelectedTimes] = useState([])
   const [isSelected, setIsSelected] = useState(false)
-  const [dateList, setDateList] = useState([])
+
+  const myName = data.loginName
+  const myTimeList = data.userList
+    .find(user => user.userName == myName)
+    ?.timeList.map(({ date, time }) => time.map(t => t + data.dateList.indexOf(date) * 48))
+    .flat()
+
+  const [selectedTimes, setSelectedTimes] = useState(myTimeList)
 
   const handleMouseDown = async index => {
     setIsDragging(true)
@@ -40,10 +46,8 @@ const Register = ({ data }) => {
       })
     })
 
-    setDateList(selectedTime)
     setSelectedTimes(uniqueArr)
   }
-  console.log(dateList)
   return (
     <div className="w-full h-full flex justify-center items-start gap-3 pt-5 pb-32 overflow-y-scroll">
       <div className="w-full flex flex-row gap-5 justify-center overflow-y-scroll">
@@ -72,7 +76,7 @@ const Register = ({ data }) => {
                     </>
                   )}
                   <div
-                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
+                    className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer ${selectedTimes && selectedTimes.includes(index + dateIdx * 48 + 1) ? "bg-[#A9FF75]" : "bg-gray-200"}`}
                     onMouseDown={() => handleMouseDown(index + dateIdx * 48 + 1)}
                     onMouseEnter={() => handleMouseEnter(index + dateIdx * 48 + 1)}
                   ></div>

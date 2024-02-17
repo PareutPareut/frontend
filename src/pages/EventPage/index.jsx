@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Header } from "@/components"
 import { CheckTimeTable, Register } from "./components"
 import { useParams } from "react-router-dom"
+import { useGetMemberAll } from "@/apis/hooks"
 
 const mock = {
   loginName: "주하",
@@ -16,7 +17,7 @@ const mock = {
         },
         {
           date: "2021-08-02",
-          time: [2, 5, 6],
+          time: [2, 5, 6, 32],
         },
       ],
     },
@@ -56,6 +57,15 @@ const mock = {
 const EventPage = () => {
   const { id } = useParams()
   console.log(id)
+
+  const { data, isError } = useGetMemberAll({ param: id })
+
+  if (isError) {
+    console.log("isError라고")
+  }
+
+  console.log(data)
+
   return (
     <div className="w-full h-full">
       <Header />
