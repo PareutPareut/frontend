@@ -1,44 +1,55 @@
-// MainPage.js
-import React, { useState } from "react"
-import Cal from "./Cal" // Cal 컴포넌트 가져오기
+import { useState } from "react"
+import Cal from "./Cal"
 import useCalendar from "./useCalendar"
 import usePostEventCreate from "../../apis/hooks/usePostEventCreate"
 import logo from "../../assets/logo.png"
+import { useNavigate } from "react-router-dom"
+import { useToast } from "@/components/ui/use-toast"
 
 const MainPage = () => {
-  const [eventName, setEventName] = useState("") // 잔디명 상태
-  const [selectedDates, setSelectedDates] = useState([]) // 선택된 날짜들 상태
+  const navigate = useNavigate()
+  const { toast } = useToast()
+  const [eventName, setEventName] = useState("")
+  const [selectedDates, setSelectedDates] = useState([])
   const { mutate: createEvent } = usePostEventCreate()
   const { currentDate } = useCalendar()
 
-  //잔디명 상태 업데이트
   const handleEventNameChange = event => {
     setEventName(event.target.value)
   }
 
-  // Create api 연결
+  const handleToast = () => {
+    toast({
+      title: "Scheduled: Catch up",
+      description: "Friday, February 10, 2023 at 5:57 PM",
+    })
+  }
+
   const handleCreateEvent = () => {
-    // 잔디명과 날짜 리스트 유효성 확인
     if (!eventName) {
-      alert("잔디명을 입력하세요")
-      return
+      return handleToast()
     }
 
     if (selectedDates.length === 0) {
       alert("날짜를 선택해주세요")
       return
     }
-
-    try {
-      const eventData = {
-        dataList: selectedDates,
-        eventName: eventName,
-      }
-      // 이벤트 생성 요청 보내기
-      createEvent(eventData)
-    } catch (error) {
-      console.log("메인페이지 오류 ", error)
+    const eventData = {
+      dataList: selectedDates,
+      eventName: eventName,
     }
+    createEvent(eventData, {
+      onSuccess(data) {
+        console.log("이벤트 요청 성공")
+        console.log("data", data.data.eventName)
+
+        navigate(`/login/${data.data.eventId}`, { state: data.data.eventName })
+      },
+      onError(error) {
+        console.log("이벤트 요청 실패")
+        console.log("에러 메시지", error.message)
+      },
+    })
   }
 
   const handleDateClick = day => {

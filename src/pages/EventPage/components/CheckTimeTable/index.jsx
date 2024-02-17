@@ -1,9 +1,18 @@
 import { useState } from "react"
-import { hexToRgb, generateColors } from "@/utils"
+import { hexToRgb, generateTailwindColors, getColor } from "@/utils"
 
 const CheckTimeTable = ({ data }) => {
   const userList = ["All", ...data.userList.map(user => user.userName)]
-  const colors = generateColors(hexToRgb("#CFFFCF"), hexToRgb("#165B16"), userList.length - 1)
+  const colors = generateTailwindColors(
+    hexToRgb("#CFFFCF"),
+    hexToRgb("#165B16"),
+    userList.length - 1
+  )
+  const colorsForDirectlyStyle = getColor(
+    hexToRgb("#CFFFCF"),
+    hexToRgb("#165B16"),
+    userList.length - 1
+  )
   const totalTime = {}
   const totalTimeArray = data.userList
     .map(user =>
@@ -54,6 +63,8 @@ const CheckTimeTable = ({ data }) => {
       flag && setChoseUsers(prev => [...prev, userData.userName])
     })
   }
+
+  const getStyle = () => {}
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-start gap-5 pb-32 overflow-y-scroll">
@@ -128,7 +139,7 @@ const CheckTimeTable = ({ data }) => {
                     />
                   ) : (
                     <div
-                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer `}
+                      className={`h-[5vw] desktop:h-[2.5vw] w-[50%] cursor-pointer`}
                       style={{
                         backgroundColor: selectedTimes.includes(index + dateIdx * 48 + 1)
                           ? "#4ade80"

@@ -17,9 +17,7 @@ const Cal = ({ selectedDates, onDateClick }) => {
     setCurrentDate(previousMonthDate) // 현재 날짜 변경
   }
 
-  useEffect(() => {
-    console.log(selectedDates)
-  })
+  useEffect(() => {})
 
   return (
     <div className="calendarMain flex flex-col items-center">
